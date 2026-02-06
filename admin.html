@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - AI Labor Research Database</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --danger: #dc2626;
+      --success: #16a34a;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-light: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header h1 {
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: white;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg);
+    }
+
+    .search-bar {
+      margin-bottom: 1.5rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .papers-table {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    tr:hover {
+      background: #f1f5f9;
+    }
+
+    .paper-title {
+      font-weight: 500;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .paper-title:hover {
+      text-decoration: underline;
+    }
+
+    .paper-authors {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    .paper-year {
+      font-weight: 500;
+    }
+
+    .link-status {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    .link-valid {
+      background: var(--success);
+    }
+
+    .link-invalid {
+      background: var(--danger);
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .actions button {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--card-bg);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h2 {
+      font-size: 1.25rem;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-light);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-family: inherit;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-row-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .modal-footer {
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+
+    .tag-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-height: 42px;
+    }
+
+    .tag {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .tag button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      color: #3730a3;
+    }
+
+    .tag-input input {
+      border: none;
+      outline: none;
+      flex: 1;
+      min-width: 100px;
+      padding: 0.25rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      padding: 1rem 1.5rem;
+      background: var(--text);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast.success {
+      background: var(--success);
+    }
+
+    .toast.error {
+      background: var(--danger);
+    }
+
+    .help-text {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat {
+      background: var(--card-bg);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>AI Labor Research - Admin Panel</h1>
+    <div class="header-actions">
+      <button class="btn btn-outline" onclick="exportJSON()">Export JSON</button>
+      <button class="btn btn-primary" onclick="openAddModal()">+ Add Paper</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value" id="totalPapers">0</div>
+        <div class="stat-label">Total Papers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="experimentalCount">0</div>
+        <div class="stat-label">Experimental</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="quasiExpCount">0</div>
+        <div class="stat-label">Quasi-Experimental</div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search papers by title, author, or tag..." oninput="filterPapers()">
+    </div>
+
+    <div class="papers-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Title / Authors</th>
+            <th>Year</th>
+            <th>Publication</th>
+            <th>Method</th>
+            <th>Link</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="papersTableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Edit Paper</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="paperId">
+
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="paperTitle">
+        </div>
+
+        <div class="form-group">
+          <label>Authors (comma-separated)</label>
+          <input type="text" id="paperAuthors">
+        </div>
+
+        <div class="form-row-3">
+          <div class="form-group">
+            <label>Year</label>
+            <input type="number" id="paperYear" min="1900" max="2100">
+          </div>
+          <div class="form-group">
+            <label>Publication</label>
+            <input type="text" id="paperPublication">
+          </div>
+          <div class="form-group">
+            <label>Methodology</label>
+            <select id="paperMethodology">
+              <option value="experimental">Experimental</option>
+              <option value="quasi-experimental">Quasi-Experimental</option>
+              <option value="descriptive">Descriptive</option>
+              <option value="meta-analysis">Meta-Analysis</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" id="paperCountry">
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="paperCategory">
+              <option value="Productivity Impact">Productivity Impact</option>
+              <option value="Employment Impact">Employment Impact</option>
+              <option value="Employment Impact (Pre-LLM)">Employment Impact (Pre-LLM)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Abstract</label>
+          <textarea id="paperAbstract"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Summary (use bullet points starting with •)</label>
+          <textarea id="paperSummary" style="min-height: 180px;"></textarea>
+          <p class="help-text">Start each bullet with • for proper formatting on the site</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Paper URL</label>
+            <input type="url" id="paperUrl">
+          </div>
+          <div class="form-group">
+            <label>PDF URL (optional)</label>
+            <input type="url" id="paperPdfUrl">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tags (comma-separated)</label>
+          <input type="text" id="paperTags">
+          <p class="help-text">e.g., productivity, coding, novice-workers</p>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Featured</label>
+            <select id="paperFeatured">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Date Added</label>
+            <input type="date" id="paperDateAdded">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="savePaper()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let papers = [];
+    let editingIndex = -1;
+
+    // Load papers
+    async function loadPapers() {
+      try {
+        const response = await fetch('data/papers.json');
+        papers = await response.json();
+        renderTable();
+        updateStats();
+      } catch (error) {
+        showToast('Error loading papers: ' + error.message, 'error');
+      }
+    }
+
+    function updateStats() {
+      document.getElementById('totalPapers').textContent = papers.length;
+      document.getElementById('experimentalCount').textContent =
+        papers.filter(p => p.methodology === 'experimental').length;
+      document.getElementById('quasiExpCount').textContent =
+        papers.filter(p => p.methodology === 'quasi-experimental').length;
+    }
+
+    function renderTable(filteredPapers = null) {
+      const tbody = document.getElementById('papersTableBody');
+      const data = filteredPapers || papers;
+
+      tbody.innerHTML = data.map((paper, index) => {
+        const actualIndex = filteredPapers ? papers.findIndex(p => p.id === paper.id) : index;
+        const hasUrl = paper.url && paper.url.length > 0;
+
+        return `
+          <tr>
+            <td>
+              <div class="paper-title" onclick="openEditModal(${actualIndex})">${paper.title}</div>
+              <div class="paper-authors">${paper.authors.join(', ')}</div>
+            </td>
+            <td class="paper-year">${paper.year}</td>
+            <td>${paper.publication}</td>
+            <td>${paper.methodology}</td>
+            <td>
+              <span class="link-status ${hasUrl ? 'link-valid' : 'link-invalid'}"></span>
+              ${hasUrl ? `<a href="${paper.url}" target="_blank">View</a>` : 'Missing'}
+            </td>
+            <td class="actions">
+              <button class="btn btn-outline" onclick="openEditModal(${actualIndex})">Edit</button>
+              <button class="btn btn-danger" onclick="deletePaper(${actualIndex})">Delete</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function filterPapers() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      if (!query) {
+        renderTable();
+        return;
+      }
+
+      const filtered = papers.filter(paper =>
+        paper.title.toLowerCase().includes(query) ||
+        paper.authors.some(a => a.toLowerCase().includes(query)) ||
+        paper.tags.some(t => t.toLowerCase().includes(query))
+      );
+      renderTable(filtered);
+    }
+
+    function openEditModal(index) {
+      editingIndex = index;
+      const paper = papers[index];
+
+      document.getElementById('modalTitle').textContent = 'Edit Paper';
+      document.getElementById('paperId').value = paper.id;
+      document.getElementById('paperTitle').value = paper.title;
+      document.getElementById('paperAuthors').value = paper.authors.join(', ');
+      document.getElementById('paperYear').value = paper.year;
+      document.getElementById('paperPublication').value = paper.publication;
+      document.getElementById('paperMethodology').value = paper.methodology;
+      document.getElementById('paperCountry').value = paper.country || '';
+      document.getElementById('paperCategory').value = paper.category || 'Employment Impact';
+      document.getElementById('paperAbstract').value = paper.abstract;
+      document.getElementById('paperSummary').value = paper.summary;
+      document.getElementById('paperUrl').value = paper.url;
+      document.getElementById('paperPdfUrl').value = paper.pdfUrl || '';
+      document.getElementById('paperTags').value = paper.tags.join(', ');
+      document.getElementById('paperFeatured').value = paper.featured ? 'true' : 'false';
+      document.getElementById('paperDateAdded').value = paper.dateAdded;
+
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    function openAddModal() {
+      editingIndex = -1;
+
+      document.getElementById('modalTitle').textContent = 'Add New Paper';
+      document.getElementById('paperId').value = '';
+      document.getElementById('paperTitle').value = '';
+      document.getElementById('paperAuthors').value = '';
+      document.getElementById('paperYear').value = new Date().getFullYear();
+      document.getElementById('paperPublication').value = '';
+      document.getElementById('paperMethodology').value = 'experimental';
+      document.getElementById('paperCountry').value = 'US';
+      document.getElementById('paperCategory').value = 'Employment Impact';
+      document.getElementById('paperAbstract').value = '';
+      document.getElementById('paperSummary').value = '';
+      document.getElementById('paperUrl').value = '';
+      document.getElementById('paperPdfUrl').value = '';
+      document.getElementById('paperTags').value = '';
+      document.getElementById('paperFeatured').value = 'false';
+      document.getElementById('paperDateAdded').value = new Date().toISOString().split('T')[0];
+
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('editModal').classList.remove('active');
+      editingIndex = -1;
+    }
+
+    function generateId(title, authors) {
+      const authorPart = authors[0].split(' ').pop().toLowerCase();
+      const year = document.getElementById('paperYear').value;
+      return `${authorPart}-${year}`.replace(/[^a-z0-9-]/g, '');
+    }
+
+    function savePaper() {
+      const authors = document.getElementById('paperAuthors').value
+        .split(',')
+        .map(a => a.trim())
+        .filter(a => a);
+
+      const tags = document.getElementById('paperTags').value
+        .split(',')
+        .map(t => t.trim().toLowerCase())
+        .filter(t => t);
+
+      const paper = {
+        id: document.getElementById('paperId').value || generateId(document.getElementById('paperTitle').value, authors),
+        title: document.getElementById('paperTitle').value,
+        authors: authors,
+        year: parseInt(document.getElementById('paperYear').value),
+        publication: document.getElementById('paperPublication').value,
+        abstract: document.getElementById('paperAbstract').value,
+        summary: document.getElementById('paperSummary').value,
+        url: document.getElementById('paperUrl').value,
+        pdfUrl: document.getElementById('paperPdfUrl').value,
+        tags: tags,
+        methodology: document.getElementById('paperMethodology').value,
+        dateAdded: document.getElementById('paperDateAdded').value,
+        featured: document.getElementById('paperFeatured').value === 'true',
+        country: document.getElementById('paperCountry').value,
+        category: document.getElementById('paperCategory').value
+      };
+
+      if (editingIndex >= 0) {
+        papers[editingIndex] = paper;
+        showToast('Paper updated successfully!', 'success');
+      } else {
+        papers.push(paper);
+        showToast('Paper added successfully!', 'success');
+      }
+
+      renderTable();
+      updateStats();
+      closeModal();
+
+      // Show instructions for saving
+      showToast('Remember to click "Export JSON" to download and save changes!', 'success');
+    }
+
+    function deletePaper(index) {
+      if (confirm('Are you sure you want to delete this paper?')) {
+        papers.splice(index, 1);
+        renderTable();
+        updateStats();
+        showToast('Paper deleted. Export JSON to save changes.', 'success');
+      }
+    }
+
+    function exportJSON() {
+      const json = JSON.stringify(papers, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'papers.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      showToast('JSON exported! Replace data/papers.json with this file.', 'success');
+    }
+
+    function showToast(message, type = '') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = 'toast ' + type + ' show';
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    // Initialize
+    loadPapers();
+
+    // Close modal on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Close modal on overlay click
+    document.getElementById('editModal').addEventListener('click', (e) => {
+      if (e.target.id === 'editModal') closeModal();
+    });
+  </script>
+</body>
+</html>
