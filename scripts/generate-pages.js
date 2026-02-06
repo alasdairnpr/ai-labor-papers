@@ -93,7 +93,7 @@ function generatePaperHTML(paper) {
         <div class="paper-detail-main">
           <section>
             <h2>Summary</h2>
-            <p>${escapeHtml(paper.summary)}</p>
+            ${formatSummary(paper.summary)}
           </section>
 
           <section>
@@ -162,6 +162,26 @@ function generateRSSFeed(papers) {
 ${items}
   </channel>
 </rss>`;
+}
+
+// Utility: Format summary with bullet points
+function formatSummary(summary) {
+  if (!summary) return '<p></p>';
+
+  // Check if summary contains bullet points
+  if (summary.includes('•')) {
+    const bullets = summary.split('\n')
+      .filter(line => line.trim())
+      .map(line => {
+        // Remove leading bullet point if present
+        const cleanLine = line.replace(/^•\s*/, '').trim();
+        return `<li>${escapeHtml(cleanLine)}</li>`;
+      });
+    return `<ul class="summary-list">${bullets.join('\n            ')}</ul>`;
+  }
+
+  // If no bullets, return as paragraph
+  return `<p>${escapeHtml(summary)}</p>`;
 }
 
 // Utility: Escape HTML

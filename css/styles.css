@@ -337,6 +337,21 @@ nav a:hover {
   line-height: 1.8;
 }
 
+.paper-detail-main .summary-list {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+.paper-detail-main .summary-list li {
+  margin-bottom: 0.75rem;
+}
+
+.paper-detail-main .summary-list li:last-child {
+  margin-bottom: 0;
+}
+
 .paper-detail-sidebar {
   background-color: var(--bg-secondary);
   border-radius: 0.75rem;
