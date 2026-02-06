@@ -5,31 +5,167 @@
     <link>https://YOUR-USERNAME.github.io/ai-labor-papers/</link>
     <description>A curated collection of economics papers on the labor market impact of AI and automation.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://YOUR-USERNAME.github.io/ai-labor-papers/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>The Impact of Artificial Intelligence on the Labor Market</title>
-      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/webb-2020.html</link>
-      <description>Novel method linking AI patent text to O*NET task descriptions. Finds AI exposure is highest for well-paid, educated workers—contrasting with previous automation waves that hit middle-skill workers hardest.</description>
-      <author>Michael Webb</author>
-      <pubDate>Tue, 16 Jan 2024 00:00:00 GMT</pubDate>
-      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/webb-2020.html</guid>
+      <title>Generative AI at Work</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-li-raymond-2023.html</link>
+      <description>Studies staggered deployment of AI chat assistant for ~5,000 customer support agents. Tool increased successfully resolved user chats by 15% per agent per hour.</description>
+      <author>Erik Brynjolfsson, Danielle Li, Lindsey R. Raymond</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-li-raymond-2023.html</guid>
     </item>
     <item>
-      <title>Robots and Jobs: Evidence from US Labor Markets</title>
-      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/acemoglu-restrepo-2020.html</link>
-      <description>Landmark study finding that each robot added per 1,000 workers reduced employment-to-population ratio by 0.2% and wages by 0.42%. Effects concentrated in manufacturing and among workers without college degrees.</description>
-      <author>Daron Acemoglu, Pascual Restrepo</author>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
-      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/acemoglu-restrepo-2020.html</guid>
+      <title>Experimental evidence on the productivity effects of generative AI</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/noy-zhang-2023.html</link>
+      <description>Gave 400+ college educated professionals writing tasks, half prompted to use ChatGPT. ChatGPT group took 37% less time on tasks.</description>
+      <author>Shakked Noy, Whitney Zhang</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/noy-zhang-2023.html</guid>
     </item>
     <item>
-      <title>What Can Machine Learning Do? Workforce Implications</title>
-      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-mitchell-2017.html</link>
-      <description>Framework for understanding which tasks are susceptible to ML automation. Identifies prediction as the key capability, and argues displacement effects depend on whether ML complements or substitutes for human judgment.</description>
-      <author>Erik Brynjolfsson, Tom Mitchell</author>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
-      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-mitchell-2017.html</guid>
+      <title>The Effects of Generative AI on High-Skilled Work</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/cui-demirer-jaffe-2025.html</link>
+      <description>Pools three experiments randomizing access to Copilot among software engineers. Use of Copilot increased weekly completed tasks by 26%.</description>
+      <author>Kevin Z. Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, Tobias Salz</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/cui-demirer-jaffe-2025.html</guid>
+    </item>
+    <item>
+      <title>Large Language Models, Small Labor Market Effects</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/humlum-vestergaard-2025.html</link>
+      <description>Examines labor impact of AI chatbots in Denmark. Finds zero effects of AI chatbot adoption on earnings or hours.</description>
+      <author>Anders Humlum, Emilie Vestergaard</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/humlum-vestergaard-2025.html</guid>
+    </item>
+    <item>
+      <title>Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of AI</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-chandar-chen-2025.html</link>
+      <description>Uses ADP payroll data to examine changes since the release of generative AI. Early career workers saw a 13% decline in employment.</description>
+      <author>Erik Brynjolfsson, Bharat Chandar, Ruyu Chen</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-chandar-chen-2025.html</guid>
+    </item>
+    <item>
+      <title>Navigating the Jagged Technological Frontier</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/dellacqua-mcfowland-mollick-2023.html</link>
+      <description>RCT with ~750 BCG consultants. For tasks within AI capabilities, consultants with AI access completed 12% more tasks, 25% faster.</description>
+      <author>Fabrizio Dell&apos;Acqua, Edward McFowland III, Ethan R. Mollick</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/dellacqua-mcfowland-mollick-2023.html</guid>
+    </item>
+    <item>
+      <title>AI and Jobs: A review of theory, estimates, and evidence</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/delrio-chanona-ernst-merola-2025.html</link>
+      <description>Surveys studies of AI impact on productivity. Finds gains are 20-60% in RCTs, 15-30% in field experiments.</description>
+      <author>R. Maria del Rio-Chanona, Ekkehard Ernst, Rossana Merola, Daniel Samaan, Ole Teutloff</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/delrio-chanona-ernst-merola-2025.html</guid>
+    </item>
+    <item>
+      <title>Generative AI and labour productivity: a field experiment on coding</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/gambacorta-qiu-shan-rees-2024.html</link>
+      <description>Experiment at Ant Group involving ~1,200 coders. Group with access to LLM saw a 53% increase in code production.</description>
+      <author>Leonardo Gambacorta, Han Qiu, Shuo Shan, Daniel Rees</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/gambacorta-qiu-shan-rees-2024.html</guid>
+    </item>
+    <item>
+      <title>AI and Jobs: The Final Word (Until the Next One)</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/eckhardt-goldschlag-2025.html</link>
+      <description>Finds no aggregate effects of generative AI on the labor force in analysis of CPS data from 2022 to 2025.</description>
+      <author>Sarah E. Eckhardt, Nathan Goldschlag</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/eckhardt-goldschlag-2025.html</guid>
+    </item>
+    <item>
+      <title>Artificial Intelligence and the Labor Market</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hampole-papanikolaou-schmidt-seegmiller-2025.html</link>
+      <description>Develops new measure of task-level exposure to AI from 2010 to 2023.</description>
+      <author>Menaka Hampole, Dimitris Papanikolaou, Lawrence D.W. Schmidt, Bryan Seegmiller</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hampole-papanikolaou-schmidt-seegmiller-2025.html</guid>
+    </item>
+    <item>
+      <title>The Short-Term Effects of Generative Artificial Intelligence on Employment</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hui-reshef-zhou-2023.html</link>
+      <description>Uses Upwork data to analyze freelancers before and after release of ChatGPT, DALL-E 2, and Midjourney.</description>
+      <author>Xiang Hui, Oren Reshef, Luofeng Zhou</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hui-reshef-zhou-2023.html</guid>
+    </item>
+    <item>
+      <title>Generative AI and Labor Market Outcomes: Evidence from the United Kingdom</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/teeselink-2025.html</link>
+      <description>Finds the most exposed UK firms experienced a 4.5% fall in total employment relative to firms without exposure.</description>
+      <author>Bouke Klein Teeselink</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/teeselink-2025.html</guid>
+    </item>
+    <item>
+      <title>Winners and losers of generative AI: Early Evidence of Shifts in Freelancer Demand</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/teutloff-einsiedler-kassi-2025.html</link>
+      <description>Uses freelancing platform data to categorize skills as substitutable, complementary, or unaffected by LLMs.</description>
+      <author>Ole Teutloff, Johanna Einsiedler, Otto Kässi, Fabian Braesemann, Pamela Mishkin, R. Maria del Rio-Chanona</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/teutloff-einsiedler-kassi-2025.html</guid>
+    </item>
+    <item>
+      <title>Generative AI as Seniority-Biased Technological Change</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/lichtinger-hosseini-2025.html</link>
+      <description>In firms that hire AI integrators, employment for junior workers in AI-exposed roles declines sharply.</description>
+      <author>Guy Lichtinger, Seyed Hosseini</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/lichtinger-hosseini-2025.html</guid>
+    </item>
+    <item>
+      <title>The (Short-Term) Effects of LLMs on Unemployment and Earnings</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/chen-kane-kozlowski-2025.html</link>
+      <description>Finds that ChatGPT raised earnings for workers in highly exposed occupations by an average of $89 per week.</description>
+      <author>Danqing Chen, Carina Kane, Austin Kozlowski, Nadav Kunievsky, James A. Evans</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/chen-kane-kozlowski-2025.html</guid>
+    </item>
+    <item>
+      <title>Evaluating the Impact of AI on the Labor Market: Current State of Affairs</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/gimbel-kinder-kendall-lee-2025.html</link>
+      <description>Broad look at AI impact on US labor market from late 2022 to late 2025. No discernible disruption to aggregate labor market.</description>
+      <author>Martha Gimbel, Molly Kinder, Joshua Kendall, Maddie Lee</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/gimbel-kinder-kendall-lee-2025.html</guid>
+    </item>
+    <item>
+      <title>Advancing AI Capabilities and Evolving Labor Outcomes</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/dominski-lee-2025.html</link>
+      <description>Using a novel measure of AI exposure, finds a 10 point increase is associated with a 5-8pp decline in employment.</description>
+      <author>Jacob Dominski, Yong Suk Lee</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/dominski-lee-2025.html</guid>
+    </item>
+    <item>
+      <title>The Labor Market Effects of Generative Artificial Intelligence</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hartley-jolevski-melo-moore-2025.html</link>
+      <description>Survey found LLM use at work rose from 30% in Dec 2024 to 46% in June/July 2025.</description>
+      <author>Jonathan Hartley, Filip Jolevski, Vitor Melo, Brendan Moore</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/hartley-jolevski-melo-moore-2025.html</guid>
+    </item>
+    <item>
+      <title>Assessing early labor market effects of generative AI</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/kauhanen-rouvinen-2024.html</link>
+      <description>Used data on all wage earners in Finland to assess ChatGPT impact. Finds no significant differences in changes in wage or employment.</description>
+      <author>Antti Kauhanen, Petri Rouvinen</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/kauhanen-rouvinen-2024.html</guid>
+    </item>
+    <item>
+      <title>Artificial intelligence, hiring and employment: job postings evidence from Sweden</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/engberg-hellsten-javed-2024.html</link>
+      <description>Combines universal Swedish employment data from 2014-2022 with AI exposure measure.</description>
+      <author>Erik Engberg, Mark Hellsten, Farrukh Javed, Magnus Lodefalk, Radka Sabolová, Sarah Schroeder</author>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/engberg-hellsten-javed-2024.html</guid>
     </item>
   </channel>
 </rss>
