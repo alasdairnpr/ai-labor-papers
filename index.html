@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & Labor Market Research Database</title>
+  <meta name="description" content="A curated database of economics research papers on the labor market impact of artificial intelligence and automation.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AI Labor Research</a>
+      <nav>
+        <a href="index.html">Papers</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>AI & Labor Market Research</h1>
+      <p>A curated collection of economics papers examining how artificial intelligence and automation are reshaping labor markets, employment, and wages.</p>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="container">
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search papers by title, author, or keyword...">
+        </div>
+        <div class="filter-group">
+          <select id="yearFilter" class="filter-select">
+            <option value="">All Years</option>
+          </select>
+          <select id="methodologyFilter" class="filter-select">
+            <option value="">All Methods</option>
+            <option value="empirical">Empirical</option>
+            <option value="theoretical">Theoretical</option>
+            <option value="survey">Survey</option>
+            <option value="experimental">Experimental</option>
+          </select>
+          <select id="tagFilter" class="filter-select">
+            <option value="">All Topics</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="papers-section">
+    <div class="container">
+      <div class="results-info" id="resultsInfo">Loading papers...</div>
+      <div class="paper-list" id="paperList">
+        <!-- Papers will be loaded here by JavaScript -->
+      </div>
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <h3>No papers found</h3>
+        <p>Try adjusting your search or filters.</p>
+      </div>
+    </div>
+  </main>
+
+  <section class="subscribe-section">
+    <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Get notified when new papers are added to the database.</p>
+      <form class="subscribe-form" id="subscribeForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 AI Labor Research Database. Built for researchers and policymakers.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

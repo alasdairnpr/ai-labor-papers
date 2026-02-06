@@ -1,0 +1,47 @@
+[
+  {
+    "id": "acemoglu-restrepo-2020",
+    "title": "Robots and Jobs: Evidence from US Labor Markets",
+    "authors": ["Daron Acemoglu", "Pascual Restrepo"],
+    "year": 2020,
+    "publication": "Journal of Political Economy",
+    "abstract": "We study the effects of the increase in industrial robot usage between 1990 and 2007 on US local labor markets. Using a model in which robots compete against human labor in the production of different tasks, we show that robots may reduce employment and wages.",
+    "summary": "Landmark study finding that each robot added per 1,000 workers reduced employment-to-population ratio by 0.2% and wages by 0.42%. Effects concentrated in manufacturing and among workers without college degrees.",
+    "url": "https://www.journals.uchicago.edu/doi/10.1086/705716",
+    "pdfUrl": "",
+    "tags": ["automation", "robots", "employment", "wages", "manufacturing"],
+    "methodology": "empirical",
+    "dateAdded": "2024-01-15",
+    "featured": true
+  },
+  {
+    "id": "brynjolfsson-mitchell-2017",
+    "title": "What Can Machine Learning Do? Workforce Implications",
+    "authors": ["Erik Brynjolfsson", "Tom Mitchell"],
+    "year": 2017,
+    "publication": "Science",
+    "abstract": "Digital computers have transformed work in almost every sector of the economy, but their full effects on jobs is only beginning to be felt. We discuss what machine learning can and cannot do, and the resistance certain tasks have to automation.",
+    "summary": "Framework for understanding which tasks are susceptible to ML automation. Identifies prediction as the key capability, and argues displacement effects depend on whether ML complements or substitutes for human judgment.",
+    "url": "https://www.science.org/doi/10.1126/science.aap8062",
+    "pdfUrl": "",
+    "tags": ["machine-learning", "tasks", "skills", "framework"],
+    "methodology": "theoretical",
+    "dateAdded": "2024-01-15",
+    "featured": true
+  },
+  {
+    "id": "webb-2020",
+    "title": "The Impact of Artificial Intelligence on the Labor Market",
+    "authors": ["Michael Webb"],
+    "year": 2020,
+    "publication": "Stanford Working Paper",
+    "abstract": "I construct a measure of the exposure of tasks to artificial intelligence by comparing the text of patents to the text of job task descriptions. I find that AI-exposed occupations are at the high end of the wage distribution.",
+    "summary": "Novel method linking AI patent text to O*NET task descriptions. Finds AI exposure is highest for well-paid, educated workers—contrasting with previous automation waves that hit middle-skill workers hardest.",
+    "url": "https://www.michaelwebb.co/webb_ai.pdf",
+    "pdfUrl": "https://www.michaelwebb.co/webb_ai.pdf",
+    "tags": ["AI-exposure", "occupations", "patents", "skills"],
+    "methodology": "empirical",
+    "dateAdded": "2024-01-16",
+    "featured": false
+  }
+]

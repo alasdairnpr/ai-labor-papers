@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI &amp; Labor Market Research Database</title>
+    <link>https://YOUR-USERNAME.github.io/ai-labor-papers/</link>
+    <description>A curated collection of economics papers on the labor market impact of AI and automation.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://YOUR-USERNAME.github.io/ai-labor-papers/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Impact of Artificial Intelligence on the Labor Market</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/webb-2020.html</link>
+      <description>Novel method linking AI patent text to O*NET task descriptions. Finds AI exposure is highest for well-paid, educated workers—contrasting with previous automation waves that hit middle-skill workers hardest.</description>
+      <author>Michael Webb</author>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/webb-2020.html</guid>
+    </item>
+    <item>
+      <title>Robots and Jobs: Evidence from US Labor Markets</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/acemoglu-restrepo-2020.html</link>
+      <description>Landmark study finding that each robot added per 1,000 workers reduced employment-to-population ratio by 0.2% and wages by 0.42%. Effects concentrated in manufacturing and among workers without college degrees.</description>
+      <author>Daron Acemoglu, Pascual Restrepo</author>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/acemoglu-restrepo-2020.html</guid>
+    </item>
+    <item>
+      <title>What Can Machine Learning Do? Workforce Implications</title>
+      <link>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-mitchell-2017.html</link>
+      <description>Framework for understanding which tasks are susceptible to ML automation. Identifies prediction as the key capability, and argues displacement effects depend on whether ML complements or substitutes for human judgment.</description>
+      <author>Erik Brynjolfsson, Tom Mitchell</author>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+      <guid>https://YOUR-USERNAME.github.io/ai-labor-papers/papers/brynjolfsson-mitchell-2017.html</guid>
+    </item>
+  </channel>
+</rss>

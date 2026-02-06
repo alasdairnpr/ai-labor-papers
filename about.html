@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - AI Labor Research Database</title>
+  <meta name="description" content="About the AI & Labor Market Research Database - a curated collection of economics papers on AI's impact on work.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AI Labor Research</a>
+      <nav>
+        <a href="index.html">Papers</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="paper-detail">
+    <div class="container">
+      <div class="paper-detail-header">
+        <h1 class="paper-detail-title">About This Database</h1>
+      </div>
+
+      <div class="paper-detail-content">
+        <div class="paper-detail-main">
+          <section>
+            <h2>Purpose</h2>
+            <p>This database curates economics research examining how artificial intelligence and automation affect labor markets. As AI capabilities expand rapidly, understanding the empirical evidence on employment, wages, and skill demands becomes increasingly important for researchers, policymakers, and the public.</p>
+          </section>
+
+          <section>
+            <h2>What's Included</h2>
+            <p>We focus on peer-reviewed academic papers and working papers from recognized economics research institutions. Each entry includes:</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+              <li>The original abstract from the paper</li>
+              <li>A curated summary highlighting key findings</li>
+              <li>Methodology classification (empirical, theoretical, survey, etc.)</li>
+              <li>Topic tags for easy filtering</li>
+              <li>Direct links to the original source</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Coverage</h2>
+            <p>Topics covered include:</p>
+            <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 2;">
+              <li>Industrial automation and robotics</li>
+              <li>Machine learning and AI adoption</li>
+              <li>Task-based models of labor markets</li>
+              <li>Wage effects of technological change</li>
+              <li>Skill-biased technical change</li>
+              <li>Labor market polarization</li>
+              <li>Worker displacement and reallocation</li>
+              <li>Policy responses to automation</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Updates</h2>
+            <p>New papers are added regularly as they are published. Subscribe to receive notifications when new research is added to the database.</p>
+          </section>
+
+          <section>
+            <h2>Suggest a Paper</h2>
+            <p>Know of a paper that should be included? <a href="mailto:your-email@example.com">Send us a suggestion</a>.</p>
+          </section>
+        </div>
+
+        <div class="paper-detail-sidebar">
+          <h3>Quick Stats</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light); margin-bottom: 1rem;">
+            <strong id="totalPapers">--</strong> papers in database
+          </p>
+          <p style="font-size: 0.875rem; color: var(--text-light);">
+            Last updated: <span id="lastUpdated">--</span>
+          </p>
+
+          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+            <h3>Stay Updated</h3>
+            <a href="subscribe.html" class="btn">Subscribe to Updates</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 AI Labor Research Database. Built for researchers and policymakers.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Load paper stats
+    fetch('data/papers.json')
+      .then(response => response.json())
+      .then(papers => {
+        document.getElementById('totalPapers').textContent = papers.length;
+
+        // Find most recent date added
+        const dates = papers.map(p => new Date(p.dateAdded));
+        const mostRecent = new Date(Math.max(...dates));
+        document.getElementById('lastUpdated').textContent = mostRecent.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      })
+      .catch(err => console.error('Error loading stats:', err));
+  </script>
+</body>
+</html>
